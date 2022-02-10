@@ -6,13 +6,51 @@ dbstop if error;
 
 addpath('npy-matlab');
 addpath('lsd_1.6');
+addpath('MatlabProgressBar');
 addpath(genpath(pwd));
 
 
-%% common setting to read Stray Scanner recording data
+%% main sciprt to parse rgb, depth, and confidence data
 
-%
-datasetPath = '../renaissance_plaza_scan/';
+% define dataset directory from Stray Scanner app
+datasetPath = '../rgbd_dataset_renaissance_03_corridor01';
+process_data(datasetPath);
+
+
+
+
+%%
+
+data_path = datasetPath;
+
+
+
+% save RGB image files
+disp('Extract images from video...');
+video_path = [data_path '/rgb.mp4'];
+image_path = [data_path '/rgb'];
+if (~exist(image_path, 'dir'))
+    mkdir(image_path);
+end
+extract_frames(video_path, image_path);
+
+
+
+
+
+
+
+
+
+%%
+
+
+
+
+
+
+
+
 frameIndex =  831;
 
 
