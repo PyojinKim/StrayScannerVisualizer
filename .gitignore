@@ -1,0 +1,10 @@
+# Exception folders
+rgbd_dataset_renaissance_03_corridor01/
+
+
+# Matlab variables
+
+
+# backup files
+*.bak
+
