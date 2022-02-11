@@ -1,1 +1,0 @@
-mex MEX/MEX_lsd_cmd.c ../lsd.c
