@@ -1,4 +1,4 @@
-function extract_frames(video_path, out_folder)
+function [frame_count] = extract_color_frames(video_path, out_folder)
 
 % extract image frames from the video file
 cap = VideoReader(video_path);
