@@ -2,7 +2,7 @@
 
 A set of MATLAB scripts to work with data collected using [Stray Scanner](https://apps.apple.com/us/app/stray-scanner/id1557051662).
 
-![results](https://https://github.com/PyojinKim/StrayScannerVisualizer/blob/main/result.png)
+![results](https://github.com/PyojinKim/StrayScannerVisualizer/blob/main/result.png)
 
 
 ## Usage
