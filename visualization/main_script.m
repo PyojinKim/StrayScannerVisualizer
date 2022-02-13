@@ -19,7 +19,7 @@ process_data(datasetPath);
 %% visualize rgb, depth, and confidence images
 
 % image index
-frameIndex = 200;
+frameIndex = 504;
 
 
 % read color, depth, and confidence images
@@ -49,7 +49,7 @@ imshow(colorImageResized,[]); hold on;
 h = imshow(depthImage,[]); hold off;
 
 [M,N] = size(depthImage);
-block_size = 60;
+block_size = 50;
 P = ceil(M/block_size);
 Q = ceil(N/block_size);
 alpha_data = checkerboard(block_size, P, Q) > 0;
