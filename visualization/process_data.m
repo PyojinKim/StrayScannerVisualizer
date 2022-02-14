@@ -1,6 +1,6 @@
 function process_data(data_path)
 
-% save color image files
+% extract color image files
 disp('Extract color images from video...');
 video_path = [data_path '/rgb.mp4'];
 image_path = [data_path '/rgb'];
@@ -16,7 +16,7 @@ depth_path = [data_path '/depth'];
 convert_depth_frames(depth_path);
 
 
-% re-name confidence image files
+% rename confidence image files
 disp('Rename confidence images...');
 conf_old_path = [data_path '/confidence'];
 conf_new_path = [data_path '/conf'];
@@ -33,6 +33,11 @@ depth_K = eye(3);
 depth_K(1,:) = color_K(1,:) / (1920/256);
 depth_K(2,:) = color_K(2,:) / (1440/192);
 save([data_path '/camera_matrix.mat'],'color_K','depth_K');
+
+
+% save ARKit camera poses
+poses_path = [data_path '/odometry.csv'];
+save_camera_poses(poses_path);
 
 
 end

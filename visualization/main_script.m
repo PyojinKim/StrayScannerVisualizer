@@ -16,6 +16,15 @@ datasetPath = '../rgbd_dataset_renaissance_03_corridor01';
 process_data(datasetPath);
 
 
+% downsample
+
+
+
+
+
+
+
+
 %% visualize rgb, depth, and confidence images
 
 % image index
