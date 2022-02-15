@@ -16,13 +16,8 @@ datasetPath = '../rgbd_dataset_renaissance_03_corridor01';
 process_data(datasetPath);
 
 
-% downsample
-
-
-
-
-
-
+% downsample the data with target FPS (default is 60 Hz)
+downsample_data(datasetPath, 20);
 
 
 %% visualize rgb, depth, and confidence images
