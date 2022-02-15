@@ -74,5 +74,31 @@ scatter3(x3DptsCam(1,:).' , x3DptsCam(2,:).' , x3DptsCam(3,:).' , 100*ones(numPt
 f = FigureRotator(gca());
 
 
+% 4) plot 6-DoF camera poses from Apple ARKit (VIO)
+load([datasetPath '/odometry.mat']);
+
+figure; hold on; grid on; axis equal;
+L = 0.3; % coordinate axis length
+A = [0 0 0 1; L 0 0 1; 0 0 0 1; 0 L 0 1; 0 0 0 1; 0 0 L 1]';
+for k = 1:60:length(T_gc_ARKit)
+    T = T_gc_ARKit{k};
+    B = T * A;
+    plot3(B(1,1:2),B(2,1:2),B(3,1:2),'-r','LineWidth',1);    % x: red
+    plot3(B(1,3:4),B(2,3:4),B(3,3:4),'-g','LineWidth',1);   % y: green
+    plot3(B(1,5:6),B(2,5:6),B(3,5:6),'-b','LineWidth',1);   % z: blue
+end
+plot3(p_gc_ARKit(1,:),p_gc_ARKit(2,:),p_gc_ARKit(3,:),'k','LineWidth',2);
+plot_inertial_frame(0.5); xlabel('X [m]'); ylabel('Y [m]'); zlabel('Z [m]');
+
+% figure options
+f = FigureRotator(gca());
+
+
+
+
+
+
+
+
 
 
