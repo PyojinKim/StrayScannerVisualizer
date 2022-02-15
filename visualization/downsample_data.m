@@ -55,9 +55,9 @@ end
 % downsample camera poses
 load([data_path '/odometry.mat']);
 camera_pose_count = length(T_gc_ARKit);
-R_gc_ARKit = R_gc_ARKit(:,:,1:frameInterval:conf_frame_count);
-p_gc_ARKit = p_gc_ARKit(:,1:frameInterval:conf_frame_count);
-T_gc_ARKit = T_gc_ARKit(1:frameInterval:conf_frame_count);
+R_gc_ARKit = R_gc_ARKit(:,:,1:frameInterval:camera_pose_count);
+p_gc_ARKit = p_gc_ARKit(:,1:frameInterval:camera_pose_count);
+T_gc_ARKit = T_gc_ARKit(1:frameInterval:camera_pose_count);
 save([data_path '/odometry_downsampled.mat'],'R_gc_ARKit','p_gc_ARKit','T_gc_ARKit');
 
 
