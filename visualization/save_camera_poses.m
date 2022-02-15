@@ -1,8 +1,12 @@
 function [camera_pose_count] = save_camera_poses(poses_path)
 
-% convert T_gc SE(3) representation
+% read 6-DoF camera poses
 camera_poses = readmatrix(poses_path);
 camera_pose_count = size(camera_poses,1);
+fprintf('===== The number of camera poses: %06d ===== \n', camera_pose_count);
+
+
+% convert T_gc SE(3) representation
 R_gc_ARKit = zeros(3,3,camera_pose_count);
 p_gc_ARKit = zeros(3,camera_pose_count);
 T_gc_ARKit = cell(1,camera_pose_count);

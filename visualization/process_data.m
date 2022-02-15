@@ -35,7 +35,7 @@ depth_K(2,:) = color_K(2,:) / (1440/192);
 save([data_path '/camera_matrix.mat'],'color_K','depth_K');
 
 
-% save ARKit camera poses
+% save camera poses
 poses_path = [data_path '/odometry.csv'];
 save_camera_poses(poses_path);
 
