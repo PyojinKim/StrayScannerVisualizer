@@ -5,7 +5,6 @@ rand('state',0); % rand('state',sum(100*clock));
 dbstop if error;
 
 addpath('MatlabProgressBar');
-addpath('npy-matlab');
 addpath(genpath(pwd));
 
 
@@ -17,7 +16,7 @@ process_data(datasetPath);
 
 
 % downsample the data with target FPS (default is 60 Hz)
-downsample_data(datasetPath, 20);
+% downsample_data(datasetPath, 20);
 
 
 %% visualize rgb, depth, and confidence images

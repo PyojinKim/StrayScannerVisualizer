@@ -10,16 +10,20 @@ end
 extract_color_frames(video_path, image_path);
 
 
-% convert depth image files
-disp('Convert depth images as png format...');
-depth_path = [data_path '/depth'];
-convert_depth_frames(depth_path);
+% rename depth image files
+disp('Rename depth images...');
+depth_old_path = [data_path '/depth'];
+depth_new_path = [data_path '/depth_one_index'];
+if (~exist(depth_new_path, 'dir'))
+    mkdir(depth_new_path);
+end
+rename_depth_frames(depth_old_path, depth_new_path);
 
 
 % rename confidence image files
 disp('Rename confidence images...');
 conf_old_path = [data_path '/confidence'];
-conf_new_path = [data_path '/conf'];
+conf_new_path = [data_path '/confidence_one_index'];
 if (~exist(conf_new_path, 'dir'))
     mkdir(conf_new_path);
 end
@@ -41,3 +45,10 @@ save_camera_poses(poses_path);
 
 
 end
+
+
+% % convert depth image files
+% disp('Convert depth images as png format...');
+% depth_path = [data_path '/depth'];
+% convert_depth_frames(depth_path);
+
